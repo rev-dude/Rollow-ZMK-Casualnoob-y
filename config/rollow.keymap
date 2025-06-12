@@ -63,6 +63,15 @@
         };
     };
 
+    combos {
+     compatible = "zmk,combos";
+       combo_ctrlbksp {
+            timeout-ms = <50>;
+            key-positions = <12 31>;
+            bindings = <&kp LC(BSPC)>;
+        };
+    };
+
         keymap {
                 compatible = "zmk,keymap";
 
@@ -167,10 +176,10 @@
  *   Encoder Right: Left <-> Right
  */
                         bindings = <
-      &kp LA(F4)        &kp F7          &kp F8          &kp F9          &kp F10                 &kp PG_UP       &kp HOME        &kp UP          &kp END         &kp LG(LS(S))
-      &hm LGUI CAPS     &hm LALT F4     &hm LCTRL F5    &hm LSHFT F6    &kp F11                 &kp PG_DN       &kp LEFT        &kp DOWN        &kp RIGHT       &kp LG(GRAVE)
-      &to QWERTY        &kp F1          &kp F2          &kp F3          &kp F12                 &none           &kp RSHFT       &kp RCTRL       &kp RALT        &kp RWIN
-                                        &to QWERTY      &kp DEL         &kp TAB                 &trans          &trans          &none
+      &kp LA(F4)        &kp F7          &kp F8          &kp F9          &kp F10                 &kp PG_UP       &kp HOME               &kp UP          &kp END                &kp LG(LS(S))
+      &hm LGUI CAPS     &hm LALT F4     &hm LCTRL F5    &hm LSHFT F6    &kp F11                 &kp PG_DN       &kp LEFT               &kp DOWN        &kp RIGHT              &kp LG(GRAVE)
+      &to QWERTY        &kp F1          &kp F2          &kp F3          &kp F12                 &none           &th RSHFT LC(LG(LEFT)) &kp RCTRL       &th RALT LC(LG(RIGHT)) &kp RWIN
+                                        &to QWERTY      &kp DEL         &kp TAB                 &trans          &trans                 &none
 
                         >;
 
@@ -201,7 +210,7 @@
 
                         >;
 
-                        sensor-bindings = <&inc_dec_kp DOWN UP &inc_dec_kp RIGHT LEFT>;
+                        sensor-bindings = <&inc_dec_kp DOWN UP &inc_dec_kp C_BRI_UP C_BRI_DEC>;
                 };
                 
         };
