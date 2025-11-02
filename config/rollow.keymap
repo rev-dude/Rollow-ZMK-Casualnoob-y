@@ -18,7 +18,7 @@
 
 
 &mt {
-    tapping-term-ms = <190>;
+    tapping-term-ms = <200>;
 };
 
 / {
@@ -65,10 +65,15 @@
 
     combos {
      compatible = "zmk,combos";
-       combo_ctrlbksp {
+        combo_ctrlbksp {
             timeout-ms = <50>;
             key-positions = <12 31>;
             bindings = <&kp LC(BSPC)>;
+        };
+        combo_snipping {
+            timeout-ms = <50>;
+            key-positions = <10 12 13>;
+            bindings = <&kp LGUI(LS(S))>;
         };
     };
 
